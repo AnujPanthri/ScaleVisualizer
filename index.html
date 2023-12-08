@@ -19,9 +19,13 @@
             
         </div>
 
-        <div id="button_group">
-            <div class="btn"></div>
-            <div class="btn"></div>
+        <div id="button_group" onchange="highlightNotes();">
+            <select class="btn" id="selected_note"></select>
+            <select class="btn" id="selected_mode">
+                <option value="major">major</option>
+                <option value="minor">minor</option>
+            
+            </select>
         </div>
     </div>
 
