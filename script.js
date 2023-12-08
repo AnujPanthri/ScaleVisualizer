@@ -3,9 +3,9 @@ function createNote(note){
     // create a note
     var note_div=document.createElement("div");
     note_div.className="note";
-    note_div.innerText=note;
+    note_div.dataset.note=note;
+    note_div.innerHTML=note+"<sub></sub>";
     note_div.style.background=`var(--${note}-color)`;
-
     notes_container.appendChild(note_div);
 
     // also create a note line
@@ -35,6 +35,11 @@ function highlightNotes(){
     document.querySelectorAll(".subbar").forEach((elem)=>{
         elem.removeAttribute("style");
     }); 
+    // clearing old subscripts
+    document.querySelectorAll(`.note>sub`).forEach((elem)=>{
+        elem.innerHTML="";
+    });
+
 
     if (selected_mode.value=="major"){
         formula=[0,2,2,1,2,2,2];    // R,2,3,4,5,6,7
@@ -61,9 +66,11 @@ function applyMode(note,formula)
         }
         else{    //mainbar
             note_elem=document.querySelector(`.mainbar[data-note="${curr_note[0]}"]`);
-            note_elem.style.background=`var(--${curr_note[0]}-color)`;
-            
+            note_elem.style.background=`var(--${curr_note[0]}-color)`;       
         }
+
+        // add number 
+        document.querySelector(`.note[data-note="${curr_note[0]}"]>sub`).innerHTML=i+1;
 
     }
 }

@@ -70,6 +70,10 @@ body{
     aspect-ratio: 1;
     margin:0.5rem;
 }
+sub{
+    font-size: 0.5em;
+    /* vertical-align: 5rem; */
+}
 
 #notes_bar_container{
     width:80%;
