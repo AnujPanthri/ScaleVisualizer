@@ -11,13 +11,13 @@ body{
 }
 
 :root{
-    --A-color:red;
-    --B-color:rgb(204, 255, 0);
-    --C-color:rgb(0, 255, 183);
-    --D-color:rgb(0, 174, 255);
-    --E-color:rgb(255, 111, 0);
-    --F-color:rgb(4, 255, 0);
-    --G-color:rgb(255, 0, 128);
+    --A-color:rgb(255, 65, 65);
+    --B-color:rgb(255, 249, 65);
+    --C-color:rgb(65, 255, 119);
+    --D-color:rgb(65, 208, 255);
+    --E-color:rgb(65, 100, 255);
+    --F-color:rgb(170, 65, 255);
+    --G-color:rgb(246, 65, 255);
 
 }
 
@@ -87,7 +87,7 @@ sub{
     height:inherit;
 }
 .mainbar{
-    background-color:black;
+    background-color:rgb(153, 153, 153);
     height:15px;
     width:100%;
     margin:calc(2rem + 0.5rem + 2rem - 15px);
