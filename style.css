@@ -78,7 +78,7 @@ sub{
 #notes_bar_container{
     width:80%;
     position: relative;
-    margin-left:2rem;
+    margin-inline:2rem;
     
 }
 
