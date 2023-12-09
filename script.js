@@ -19,7 +19,8 @@ function createNote(note){
     notes_bars.appendChild(note_bar);
 }
 
-notes_list="EFGABCD".toUpperCase().split("").reverse();
+// notes_list="EFGABCD".toUpperCase().split("").reverse();
+notes_list="CDEFGAB".toUpperCase().split("").reverse();
 notes_list.forEach(element => {
     createNote(element);
 });
@@ -29,7 +30,7 @@ all_notes_list="A A# B C C# D D# E F F# G G#".split(" ");
 
 function highlightNotes(){
     // clear old inline styling
-    subnotes_bars.querySelectorAll(".mainbar").forEach((elem)=>{
+    document.querySelectorAll(".mainbar").forEach((elem)=>{
         elem.removeAttribute("style");
     }); 
     document.querySelectorAll(".subbar").forEach((elem)=>{
@@ -53,6 +54,7 @@ function highlightNotes(){
 
 function applyMode(note,formula)
 {
+    console.clear();
     curr_idx=all_notes_list.indexOf(note);
     for (i=0;i<formula.length;i++){
         curr_idx=(curr_idx+formula[i]) %all_notes_list.length;
@@ -70,7 +72,7 @@ function applyMode(note,formula)
         }
 
         // add number 
-        document.querySelector(`.note[data-note="${curr_note[0]}"]>sub`).innerHTML=i+1;
+        document.querySelector(`.note[data-note="${curr_note[0]}"]>sub`).innerHTML+=" "+(i+1);
 
     }
 }
